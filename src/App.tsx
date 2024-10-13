@@ -19,12 +19,24 @@ export default function App() {
     if (userIndex === -1) return;
     const newUsers = [...users];
     const target = e.target as HTMLFormElement;
-    const newName = target.elements.namedItem("name") as HTMLInputElement; //get input element
-    newUsers[userIndex].name.first = newName.value;
+    // const newName = target.elements.namedItem("name") as HTMLInputElement; //get input element
+    // newUsers[userIndex].name.first = newName.value;
+    const formData = new FormData(target);
+    const newName = formData.get("name");
+    newUsers[userIndex].name.first = newName as string;
     setUsers(newUsers);
     target.reset(); // reset form
     dialogRef.current?.close();
   };
+
+  // Ejemplo de envío con fetch
+  //  fetch('https://ejemplo.com/api', {
+  //   method: 'POST',
+  //   body: formData
+  // })
+  // .then(response => response.json())
+  // .then(data => console.log(data))
+  // .catch(error => console.error('Error:', error));
 
   return (
     <>
