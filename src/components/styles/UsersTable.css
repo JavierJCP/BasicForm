@@ -1,0 +1,17 @@
+.users__table {
+  width: 100%;
+  thead > tr > th {
+    background-color: royalblue;
+    padding: 0.3rem 0;
+  }
+
+  tbody {
+    tr:nth-child(even) {
+      background-color: #333;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #555;
+    }
+  }
+}

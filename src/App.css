@@ -1,0 +1,25 @@
+#root {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.modal {
+  color-scheme: light;
+
+  button {
+    background-color: royalblue;
+    color: #fff;
+  }
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.647);
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
