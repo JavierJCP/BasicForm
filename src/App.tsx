@@ -19,10 +19,10 @@ export default function App() {
     if (userIndex === -1) return;
     const newUsers = [...users];
     const target = e.target as HTMLFormElement;
-    const newName = target.elements.namedItem("name") as HTMLInputElement;
+    const newName = target.elements.namedItem("name") as HTMLInputElement; //get input element
     newUsers[userIndex].name.first = newName.value;
     setUsers(newUsers);
-    target.reset();
+    target.reset(); // reset form
     dialogRef.current?.close();
   };
 
@@ -39,7 +39,6 @@ export default function App() {
             Name:
             <input type="text" name="name" />
           </label>
-
           <button>Guardar</button>
         </form>
       </dialog>
